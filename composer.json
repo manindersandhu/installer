@@ -1,0 +1,19 @@
+{
+    "name": "lara/installer",
+    "description": "Project installer",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lara\\Installer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maninderdeep singh",
+            "email": "maninderdeep5678@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
