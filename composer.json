@@ -1,18 +1,30 @@
 {
-    "name": "lara/installer",
-    "description": "Project installer",
+    "name": "manindersandhu/installer",
+    "description": "A project installer package for Laravel",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Lara\\Installer\\": "src/"
+            "Manindersandhu\\Installer\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Maninderdeep singh",
+            "name": "Maninderdeep Singh",
             "email": "maninderdeep5678@gmail.com"
         }
     ],
-     "require": {}
+    "require": {
+        "php": ">=8.0", 
+        "illuminate/support": "^9.0" 
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Manindersandhu\\Installer\\InstallerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
