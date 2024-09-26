@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Manindersandhu\\Installer\\InstallerServiceProvider"
+                "manindersandhu\\Installer\\InstallerServiceProvider"
             ]
         }
     },
