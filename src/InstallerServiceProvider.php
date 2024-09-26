@@ -1,5 +1,5 @@
 <?php
-namespace Lara\Installer;
+namespace Manindersandhu\Installer; 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router; 
 use Lara\Installer\Http\Middlewares\IsInstalled;
