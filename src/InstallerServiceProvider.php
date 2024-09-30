@@ -9,8 +9,7 @@ class InstallerServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {   
         $this->loadViewsFrom(__DIR__.'/views','Installer');
-        // $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-        $router->middlewareGroup('installer', [IsInstalled::class]);
+        $router->middlewareGroup('isAdmin', [IsAdmin::class]);
         $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
 
     } 
