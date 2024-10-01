@@ -1,6 +1,6 @@
 <?php
 
-namespace Lara\Installer\Http\Middlewares;
+namespace Manindersandhu\Installer\Http\Middlewares;
 
 use Closure;
 
@@ -12,35 +12,33 @@ use LaraSidebar\LaravelSidebar\Http\Models\SidebarAccess;
 
 
 class IsAdmin
-{ 
-
-     /**
+{
+    /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param  \Closure  $next
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
         // Check if the application is installed
         $isAppInstalled = config('installer.verify.installed');
         if (!$isAppInstalled) {
             return redirect(url('/'));
         }
-
-        // Check if the user is authenticated
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
-
-        // Check role access to the current route
         $currentUrl = $request->path();
-        $slug = preg_replace('/^admin\/?/', '', $currentUrl);  // Remove 'admin/' prefix
-        $userRoleId = Auth::user()->role_id;
+        if (str_contains($currentUrl, 'adman')) {
 
-        if (!$this->userHasAccess($userRoleId, $slug)) {
-            return redirect('/');  // Redirect if the user does not have access
+            if (!Auth::check()) {
+                return redirect()->route('login');
+            }
+            $slug = preg_replace('/^admin\/?/', '', $currentUrl);
+            $userRoleId = Auth::user()->role_id;
+
+            if (!$this->userHasAccess($userRoleId, $slug)) {
+                return redirect('/');
+            }
         }
 
         return $next($request);

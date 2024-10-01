@@ -1,12 +1,12 @@
 <?php
 
-namespace Lara\Installer\Http\Controllers;
+namespace Manindersandhu\Installer\Http\Controllers;
 
 use App\Http\Controllers\Controller;
  use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-use Lara\Installer\Http\Traits\SetEnvironment;
+use Manindersandhu\Installer\Http\Traits\SetEnvironment;
  
 class DatabaseController extends Controller
 {

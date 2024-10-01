@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route; 
-Route::group(['namespace' => 'Lara\Installer\Http\Controllers'], function(){
+Route::group(['namespace' => 'Manindersandhu\Installer\Http\Controllers'], function(){
 	Route::group(['prefix' => 'install', 'middleware' => ['installer']], function() {
 		Route::get('/', function(){ return view('Installer::welcome'); });
 		Route::get('requirements','RequirementsController@requirements');

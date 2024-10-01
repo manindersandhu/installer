@@ -1,6 +1,6 @@
 <?php
 
-namespace Lara\Installer\Http\Controllers;
+namespace Manindersandhu\Installer\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
  
