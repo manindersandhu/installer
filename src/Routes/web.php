@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route; 
 Route::group(['namespace' => 'Manindersandhu\Installer\Http\Controllers'], function(){
-	Route::group(['prefix' => 'install', 'middleware' => ['installer']], function() {
+	Route::group(['prefix' => 'install', 'middleware' => ['isAdmin']], function() {
 		Route::get('/', function(){ return view('Installer::welcome'); });
 		Route::get('requirements','RequirementsController@requirements');
 		Route::get('database', 'DatabaseController@create');
