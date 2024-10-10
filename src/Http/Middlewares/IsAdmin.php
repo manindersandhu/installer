@@ -24,10 +24,10 @@ class IsAdmin
     {
         // Check if the application is installed
         $isAppInstalled = config('installer.verify.installed');
-        if (!$isAppInstalled) {
-            return redirect(url('/'));
-        }
         $currentUrl = $request->path();
+        if (!$isAppInstalled && !str_contains($currentUrl, 'install')) {
+            return redirect(url('/install'));
+        }
         if (str_contains($currentUrl, 'adman')) {
 
             if (!Auth::check()) {
